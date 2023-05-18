@@ -1,0 +1,99 @@
+@font-face {
+    font-family: NeoSansRegular;
+    src: url('../assets/fonts/NeoSansStdRegular.otf');
+}
+
+@font-face {
+    font-family: NeoSansLight;
+    src: url('../assets/fonts/NeoSansStdLight.otf');
+}
+
+@font-face {
+    font-family: NeoSansBold;
+    src: url('../assets/fonts/NeoSansStdBold.otf');
+}
+
+$primary-color: #07BACB;
+$background-color: #000000;
+
+.main-nav {
+    height: 50px;
+    border: 1px solid white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    ul {
+        display: none;
+    }
+}
+
+.site-title {
+    font-family: NeoSansLight, sans-serif;
+    font-size: 48px;
+    // line-height: 100px;
+    margin: 48px 0 16px 0;
+    .sub-title {
+        font-family: NeoSansLight, sans-serif;
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+
+.large-banner {
+    background-color: $background-color;
+    height: 60%;
+    color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    .banner-wrapper {
+        display: flex;
+        justify-content: center;
+        .info-wrapper {}
+        .photo-wrapper {
+            width: 200px;
+            height: 700px;
+            width: 220px;
+            height: 220px;
+            padding: 0;
+            border-radius: 110px;
+            overflow: hidden;
+            img {
+                max-height: 400px;
+                min-height: 200px;
+                top: -138px;
+                position: relative;
+                left: -50px;
+            }
+        }
+    }
+    
+}
+
+.main-content {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+}
+
+
+
+.skills-wrapper {
+    width: 300px;
+    height: 80px;
+    border: 1px solid white;
+}
+
+@media screen and (max-width: 1024px) {
+    .large-banner {
+        .banner-wrapper {
+            flex-direction: column-reverse;
+            padding: 20px;
+            .info-wrapper {}
+            .photo-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}
