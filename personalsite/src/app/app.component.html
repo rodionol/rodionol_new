@@ -1,28 +1,51 @@
-<main>
-  <section class="large-banner">
-    <nav class="main-nav">
-      <button>Nav Menu</button>
-      <ul>
-        <li>Projects</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <div class="banner-wrapper flex-row">
-      <div class="info-wrapper">
-        <h1 class="site-title">
-          Lidia Rodionova<br>
-          <span class="sub-title">User Interface Developer</span>
-        </h1>
-        <div class="skills-wrapper">
-          linkedin in icon - github icon - download CV icon
-        </div>
-      </div>
-      <div class="photo-wrapper">
-        <img src="/assets/img/portrait.jpg" alt="portrait of site author">
-      </div>
-    </div>
-  </section>
-  <section class="main-content">
-    <router-outlet></router-outlet>
-  </section>
+<header class="flex-row">
+  <div class="logo-wrapper">
+    <span class="mobile">LR</span>
+    <span class="desktop">Lidia Rodionova</span>
+  </div>
+  <!-- //TODO: Add a11y label with my name/logo -->
+  <!-- <h1 class="site-title">
+    <span>Lidia Rodionova</span>
+    <span class="sub-title">User Interface Developer</span>
+  </h1> -->
+  <button class="top-nav mobile" aria-label="Mobile Menu" (click)="openMenu()"></button>
+  <!-- desktop menu -->
+  <ul class="top-nav desktop">
+    <li><a tabindex="0">CV</a></li>
+    <li><a tabindex="0" (click)="navigateTo('contact')" (keyup.enter)="navigateTo('contact')">Contact</a></li>
+  </ul>
+</header>
+<nav class="navigation-menu" #mobilemenu>
+  <button class="close-button" (click)="closeMenu()"></button>
+  <div aria-hidden="true"></div>
+  <div aria-hidden="true"></div>
+  <div class="self" aria-label="Portrait of Lidia Rodionova, site author"></div>
+  <ul>
+    <!-- <li><a tabindex="0" (click)="navigateTo('about')" (keyup.enter)="navigateTo('about')">About</a></li> -->
+    <!-- <li><a tabindex="0" (click)="navigateTo('projects')" (keyup.enter)="navigateTo('projects')">Projects</a></li> -->
+    <!-- <li><a tabindex="0" (click)="navigateTo('experience')" (keyup.enter)="navigateTo('experience')">Experience</a></li> -->
+    <!-- <li><a tabindex="0" (click)="navigateTo('education')" (keyup.enter)="navigateTo('education')">Education</a></li> -->
+    <li><a tabindex="0">CV</a></li>
+    <li><a tabindex="0" (click)="navigateTo('contact')" (keyup.enter)="navigateTo('contact')">Contact</a></li>
+  </ul>
+</nav>
+<main class="main-content">    
+  <router-outlet></router-outlet>
 </main>
+<!-- <footer>
+  <section class="social-media-links">
+    !--  // TODO: add media icons and links--
+    <div aria-label="github"><a href="">G</a></div>
+    <div aria-label="linkedin"><a href="">L</a></div>
+    <div aria-label="email"><a href="">E</a></div>
+    <div aria-label="phone"><a href="">P</a></div>
+  </section>
+  <ul>
+    <li><a href="">About</a></li>
+    <li><a href="">Projects</a></li>
+    <li><a href="">Education</a></li>
+    <li><a href="">Experience</a></li>
+    <li><a href="">Contact</a></li>
+  </ul>
+  <p class="copyright">Copyright Lidia Rodionova</p>
+</footer> -->
