@@ -11,7 +11,7 @@
   <button class="top-nav mobile" aria-label="Mobile Menu" (click)="openMenu()"></button>
   <!-- desktop menu -->
   <ul class="top-nav desktop">
-    <li><a tabindex="0">CV</a></li>
+    <li><a tabindex="0" href="../assets/docs/RodionovaLidiaResume2024.pdf" target="_blank">CV</a></li>
     <li><a tabindex="0" (click)="navigateTo('contact')" (keyup.enter)="navigateTo('contact')">Contact</a></li>
   </ul>
 </header>
@@ -32,20 +32,20 @@
 <main class="main-content">    
   <router-outlet></router-outlet>
 </main>
-<!-- <footer>
+<footer>
   <section class="social-media-links">
-    !--  // TODO: add media icons and links--
-    <div aria-label="github"><a href="">G</a></div>
-    <div aria-label="linkedin"><a href="">L</a></div>
-    <div aria-label="email"><a href="">E</a></div>
-    <div aria-label="phone"><a href="">P</a></div>
+      <!--  // TODO: add media icons and links-->
+      <a class="icon github" aria-label="github" href=""></a>
+      <a class="icon linkedin" aria-label="linkedin" href=""></a>
+      <a class="icon email" aria-label="email" href=""></a>
+      <a class="icon phone" aria-label="phone" href=""></a>
   </section>
-  <ul>
+<!--  <ul>
     <li><a href="">About</a></li>
     <li><a href="">Projects</a></li>
     <li><a href="">Education</a></li>
     <li><a href="">Experience</a></li>
     <li><a href="">Contact</a></li>
-  </ul>
+  </ul> -->
   <p class="copyright">Copyright Lidia Rodionova</p>
-</footer> -->
+</footer>

@@ -13,10 +13,11 @@
     src: url('../assets/fonts/NeoSansStdBold.otf');
 }
 
-// $primary-color: #094E81;
 $primary-dark: #094E81;
-$tertiary-color: #B3D5EF; //#D4E4F0;
+$tertiary-color: #B3D5EF;
 $primary-font: 'NeoSansRegular';
+
+$site-padding: 16px 48px;
 
 h1, h2, h3, h4, h5, h6, p, div, span, li, header, footer {
     font-family: $primary-font;
@@ -188,16 +189,10 @@ nav {
 
 main, .main-content {
     padding: 16px;
-    padding-bottom: 200px;
-    /* display: block; */
     position: relative;
-
-    // background-image: url(/assets/img/background.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
+    height: calc(100% - 88px);
     box-sizing: border-box;
+    overflow: auto;
     .page-heading {
         margin: 32px 0 24px;
         font-size: 24px;
@@ -210,20 +205,40 @@ main, .main-content {
 
 footer {
     background-color: #D4E4F0;
-    padding: 16px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 128px;
+    height: 96px;
     opacity: 0.5;
     .social-media-links {
-        > div {
-            width: 40px;
-            height: 40px;
+        text-align: center;
+        box-sizing: border-box;
+        margin: 8px;
+        .icon {
+            width: 24px;
+            height: 24px;
             display: inline-block;
-            border: 1px solid;
             border-radius: 20px;
             margin: 8px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 24px;
+            border: 2px solid transparent;
+            &.github {
+                background-image: url('../assets/img/icons/uxwing-github-icon.svg');
+            }
+            &.linkedin {
+                background-image: url('../assets/img/icons/uxwing-linkedin-square-icon.svg');
+            }
+            &.email {
+                background-image: url('../assets/img/icons/uxwing-attherate-icon.svg');
+            }
+            &.phone {
+                background-image: url('../assets/img/icons/uxwing-call-icon.svg');
+            }
+            &:hover {
+                border: 2px solid $primary-dark;
+            }
         }
     }
     ul > li {
@@ -234,6 +249,9 @@ footer {
         position: absolute;
         bottom: 0;
         font-size: 12px;
+        text-align: center;
+        width: 100%;
+        margin: 0 0 8px;
     }
 }
 
@@ -241,7 +259,7 @@ footer {
 
 @media screen and (min-width: 1024px) {
     header {
-        padding: 16px 48px;
+        padding: $site-padding;
         .logo-wrapper {
             background-color: transparent;
             width: auto;
@@ -266,6 +284,23 @@ footer {
                     text-decoration: underline;
                 }
             }
+        }
+    }
+    .main-content {
+        padding: $site-padding
+    }
+    footer {
+        padding: $site-padding;
+        .social-media-links {
+            text-align: left;
+            padding-left: 0;
+            margin-left: 0;
+            .icon {
+                margin-left: 0;
+            }
+        }
+        .copyright {
+            text-align: left;
         }
     }
 }
